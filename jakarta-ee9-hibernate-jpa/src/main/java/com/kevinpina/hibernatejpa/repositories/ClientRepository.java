@@ -2,11 +2,11 @@ package com.kevinpina.hibernatejpa.repositories;
 
 import java.util.List;
 
-import com.kevinpina.hibernatejpa.repository.entities.Client;
+import com.kevinpina.hibernatejpa.repository.entities.ClientEntity;
 
 import jakarta.persistence.EntityManager;
 
-public class ClientRepository implements CrudRepository<Client> {
+public class ClientRepository implements CrudRepository<ClientEntity> {
 
 	private EntityManager em;
 
@@ -15,27 +15,27 @@ public class ClientRepository implements CrudRepository<Client> {
 	}
 
 	@Override
-	public List<Client> list() {
-		return em.createQuery("SELECT c FROM Client c", Client.class).getResultList();
+	public List<ClientEntity> list() {
+		return em.createQuery("SELECT c FROM ClientEntity c", ClientEntity.class).getResultList();
 	}
 
 	@Override
-	public Client findById(Long id) {
-		return em.find(Client.class, id);
+	public ClientEntity findById(Long id) {
+		return em.find(ClientEntity.class, id);
 	}
 
 	@Override
-	public void save(Client client) {
-		if (client.getId() != null && client.getId() > 0) {
-			em.merge(client);
+	public void save(ClientEntity clientEntity) {
+		if (clientEntity.getId() != null && clientEntity.getId() > 0) {
+			em.merge(clientEntity);
 		}
-		em.persist(client);
+		em.persist(clientEntity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		Client client = findById(id);
-		em.remove(client);
+		ClientEntity clientEntity = findById(id);
+		em.remove(clientEntity);
 	}
 
 }
