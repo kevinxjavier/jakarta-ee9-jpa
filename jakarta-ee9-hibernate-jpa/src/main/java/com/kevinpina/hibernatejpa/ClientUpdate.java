@@ -5,7 +5,7 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 import com.kevinpina.hibernatejpa.repository.db.JpaUtil;
-import com.kevinpina.hibernatejpa.repository.entities.Client;
+import com.kevinpina.hibernatejpa.repository.entities.ClientEntity;
 
 import jakarta.persistence.EntityManager;
 
@@ -19,23 +19,23 @@ public class ClientUpdate {
 			System.out.println(("Type the client id: "));
 			Long idClient = scanner.nextLong();
 
-			Client client = em.find(Client.class, idClient);
+			ClientEntity clientEntity = em.find(ClientEntity.class, idClient);
 
-			String name = JOptionPane.showInputDialog("Type the name: ", client.getName());
-			String surname = JOptionPane.showInputDialog("Type the surname: ", client.getSurname());
-			String paymentType = JOptionPane.showInputDialog("Type the payment type: ", client.getPaymentType());
+			String name = JOptionPane.showInputDialog("Type the name: ", clientEntity.getName());
+			String surname = JOptionPane.showInputDialog("Type the surname: ", clientEntity.getSurname());
+			String paymentType = JOptionPane.showInputDialog("Type the payment type: ", clientEntity.getPaymentType());
 
-			client.setName(name);
-			client.setSurname(surname);
-			client.setPaymentType(paymentType);
+			clientEntity.setName(name);
+			clientEntity.setSurname(surname);
+			clientEntity.setPaymentType(paymentType);
 			
 			em.getTransaction().begin();
 
-			em.merge(client);
+			em.merge(clientEntity);
 
 			em.getTransaction().commit();
 			
-			System.out.println(client);
+			System.out.println(clientEntity);
 		} catch (Exception e) {
 			em.getTransaction().rollback();
 			e.printStackTrace();

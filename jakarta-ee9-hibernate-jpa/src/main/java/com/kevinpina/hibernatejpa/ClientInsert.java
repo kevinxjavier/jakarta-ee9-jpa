@@ -3,7 +3,7 @@ package com.kevinpina.hibernatejpa;
 import java.util.Scanner;
 
 import com.kevinpina.hibernatejpa.repository.db.JpaUtil;
-import com.kevinpina.hibernatejpa.repository.entities.Client;
+import com.kevinpina.hibernatejpa.repository.entities.ClientEntity;
 
 import jakarta.persistence.EntityManager;
 
@@ -20,16 +20,16 @@ public class ClientInsert {
 			System.out.println("Type payment type: ");
 			String paymentType = scanner.next();
 
-			Client client = Client.builder().name(name).surname(surname).paymentType(paymentType).build();
+			ClientEntity clientEntity = ClientEntity.builder().name(name).surname(surname).paymentType(paymentType).build();
 			
 			em.getTransaction().begin();
 			
-			em.persist(client);
+			em.persist(clientEntity);
 			
-			System.out.println(client); // After persist() will set the id attribute
+			System.out.println(clientEntity); // After persist() will set the id attribute
 			
-			Client clientInserted = em.find(Client.class, client.getId()); // Won't execute a select 'cause exists in JPA Context 
-			System.out.println(clientInserted);
+			ClientEntity clientEntityInserted = em.find(ClientEntity.class, clientEntity.getId()); // Won't execute a select 'cause exists in JPA Context
+			System.out.println(clientEntityInserted);
 
 			em.getTransaction().commit();
 		} catch (Exception e) {

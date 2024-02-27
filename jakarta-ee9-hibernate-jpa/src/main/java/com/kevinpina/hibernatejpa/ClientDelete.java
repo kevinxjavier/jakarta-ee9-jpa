@@ -3,7 +3,7 @@ package com.kevinpina.hibernatejpa;
 import java.util.Scanner;
 
 import com.kevinpina.hibernatejpa.repository.db.JpaUtil;
-import com.kevinpina.hibernatejpa.repository.entities.Client;
+import com.kevinpina.hibernatejpa.repository.entities.ClientEntity;
 
 import jakarta.persistence.EntityManager;
 
@@ -17,10 +17,10 @@ public class ClientDelete {
 			System.out.println("Type client id: ");
 			Long idClient = scanner.nextLong();
 
-			Client client = em.find(Client.class, idClient);
+			ClientEntity clientEntity = em.find(ClientEntity.class, idClient);
 
 			em.getTransaction().begin();
-			em.remove(client); // Won't work with new Client() must be initialize with JPA Context
+			em.remove(clientEntity); // Won't work with new Client() must be initialize with JPA Context
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			em.getTransaction().rollback();

@@ -3,15 +3,15 @@ package com.kevinpina.hibernatejpa.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.kevinpina.hibernatejpa.repository.entities.Client;
+import com.kevinpina.hibernatejpa.repository.entities.ClientEntity;
 
 public interface ClientService {
 
-	List<Client> list();
+	List<ClientEntity> list();
 
-	Optional<Client> findById(Long id);
+	Optional<ClientEntity> findById(Long id);
 
-	void save(Client client);
+	void save(ClientEntity clientEntity);
 
 	void delete(Long id);
 

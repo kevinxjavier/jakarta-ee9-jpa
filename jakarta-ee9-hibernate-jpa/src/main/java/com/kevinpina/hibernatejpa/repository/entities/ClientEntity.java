@@ -14,12 +14,12 @@ import lombok.ToString;
 
 @Data
 @Builder
-@NoArgsConstructor
+@NoArgsConstructor		// Must always have a Default Constructor
 @AllArgsConstructor
 @ToString
 @Entity
 @Table(name = "client")
-public class Client {
+public class ClientEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

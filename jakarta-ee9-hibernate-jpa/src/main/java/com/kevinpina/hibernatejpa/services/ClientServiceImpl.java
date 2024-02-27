@@ -5,14 +5,14 @@ import java.util.Optional;
 
 import com.kevinpina.hibernatejpa.repositories.ClientRepository;
 import com.kevinpina.hibernatejpa.repositories.CrudRepository;
-import com.kevinpina.hibernatejpa.repository.entities.Client;
+import com.kevinpina.hibernatejpa.repository.entities.ClientEntity;
 
 import jakarta.persistence.EntityManager;
 
 public class ClientServiceImpl implements ClientService {
 
 	private EntityManager em;
-	private CrudRepository<Client> repository;
+	private CrudRepository<ClientEntity> repository;
 
 	public ClientServiceImpl(EntityManager em) {
 		this.em = em;
@@ -20,20 +20,20 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public List<Client> list() {
+	public List<ClientEntity> list() {
 		return repository.list();
 	}
 
 	@Override
-	public Optional<Client> findById(Long id) {
+	public Optional<ClientEntity> findById(Long id) {
 		return Optional.ofNullable(repository.findById(id));
 	}
 
 	@Override
-	public void save(Client client) {
+	public void save(ClientEntity clientEntity) {
 		try {
 			em.getTransaction().begin();
-			repository.save(client);
+			repository.save(clientEntity);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			em.getTransaction().rollback();
