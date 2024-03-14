@@ -8,3 +8,7 @@
 ## JPA - Hibernate "Hibernate Criteria" (jakarta-ee9-hibernate-jpa-hcriterial)
 * feature/03_hibernate-jpa-hcriterial
 	- EntityManager: CriteriaBuilder, CriteriaQuery<?> query, Root<?> from
+
+## JPA - Hibernate "Hibernate Criteria" (jakarta-ee9-hibernate-jpa-events-lifecycle)
+* feature/04_hibernate-jpa-events-lifecycle
+	- @PrePersiste @PostPersist, @PreUpdate @PostUpdate, @PreRemove @PostRemove, @Embeddable, @Embedded
