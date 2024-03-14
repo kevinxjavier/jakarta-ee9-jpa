@@ -4,8 +4,13 @@
 	<persistence-unit name="conexionJPA" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-		<class>com.kevinpina.hibernatejpa.repository.entities.Client</class><!-- Optional if <exclude-unlisted-classes> is false -->
-		<exclude-unlisted-classes>true</exclude-unlisted-classes><!-- Optional and false by Default -->
+		<!--
+		 	<class>com.kevinpina.hibernatejpa.repository.entities.ClientEntity</class> tag is optional if
+		 	<exclude-unlisted-classes>false</exclude-unlisted-classes> is false, otherwise if it is "true"
+		 	the entity classes must be mapped because if is not will throw an Exception.
+		-->
+		<class>com.kevinpina.hibernatejpa.repository.entities.ClientEntity</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		
 		<properties>
 			<!-- Jakarta "9" -->
