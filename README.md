@@ -12,3 +12,7 @@
 ## JPA - Hibernate "Hibernate Criteria" (jakarta-ee9-hibernate-jpa-events-lifecycle)
 * feature/04_hibernate-jpa-events-lifecycle
 	- @PrePersiste @PostPersist, @PreUpdate @PostUpdate, @PreRemove @PostRemove, @Embeddable, @Embedded
+
+## JPA - Hibernate "Associations" (jakarta-ee9-hibernate-jpa-association)
+* feature/05_hibernate-jpa-association
+	- @OneToMany, @ManyToOne, @OneToOne @ManyToMany

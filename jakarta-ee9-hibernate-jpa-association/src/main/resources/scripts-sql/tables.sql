@@ -1,0 +1,3 @@
+-- Execute manually this script otherwise see resources/META-INF/persistence.xml the property:
+-- <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+-- will execute the @Entity classes and resources/import.sql file in the Database.
