@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+
+	<persistence-unit name="conexionJPA" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!--
+			<class>com.kevinpina.hibernatejpa.repository.entities.ClientEntity</class>
+			<class>com.kevinpina.hibernatejpa.repository.entities.InvoiceEntity</class>
+			<class>com.kevinpina.hibernatejpa.repository.entities.AddressEntity</class>
+			<class>com.kevinpina.hibernatejpa.repository.entities.DetailEntity</class>
+			<class>com.kevinpina.hibernatejpa.repository.entities.RoleEntity</class>
+			<class>com.kevinpina.hibernatejpa.repository.entities.DocumentEntity</class>
+			<class>com.kevinpina.hibernatejpa.repository.entities.CourseEntity</class>
+			<class>com.kevinpina.hibernatejpa.repository.entities.StudentEntity</class>
+			<class>com.kevinpina.hibernatejpa.repository.entities.AuthorEntity</class>
+			<class>com.kevinpina.hibernatejpa.repository.entities.BookEntity</class> these 10 tags are optional if
+		 	<exclude-unlisted-classes>false</exclude-unlisted-classes> is false, otherwise if it is "true"
+		 	the entity classes must be mapped because if is not will throw an Exception.
+		-->
+		<class>com.kevinpina.hibernatejpa.repository.entities.ClientEntity</class>
+		<class>com.kevinpina.hibernatejpa.repository.entities.InvoiceEntity</class>
+		<class>com.kevinpina.hibernatejpa.repository.entities.AddressEntity</class>
+		<class>com.kevinpina.hibernatejpa.repository.entities.DetailEntity</class>
+		<class>com.kevinpina.hibernatejpa.repository.entities.RoleEntity</class>
+		<class>com.kevinpina.hibernatejpa.repository.entities.DocumentEntity</class>
+		<class>com.kevinpina.hibernatejpa.repository.entities.CourseEntity</class>
+		<class>com.kevinpina.hibernatejpa.repository.entities.StudentEntity</class>
+		<class>com.kevinpina.hibernatejpa.repository.entities.AuthorEntity</class>
+		<class>com.kevinpina.hibernatejpa.repository.entities.BookEntity</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		
+		<properties>
+			<!-- Jakarta "9" -->
+			<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/database?serverTimezone=Europe/Madrid" />
+			<!-- JEE "8" -->
+			<!--property name="javax.persistence" value="" />-->
+			
+			<property name="jakarta.persistence.jdbc.user" value="root" />
+			<property name="jakarta.persistence.jdbc.password" value="******" />
+			<property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" /><!-- Optional Property -->
+			<property name="hibernate.show_sql" value="true" />
+			<!-- Create and Drop database always, will execute the @Entity classes and resources/import.sql file in the Database -->
+			<property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+		</properties>
+	</persistence-unit>
+
+</persistence>

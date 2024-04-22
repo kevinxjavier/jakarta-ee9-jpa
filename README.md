@@ -16,3 +16,12 @@
 ## JPA - Hibernate "Associations" (jakarta-ee9-hibernate-jpa-association)
 * feature/05_hibernate-jpa-association
 	- @OneToMany, @ManyToOne, @OneToOne @ManyToMany
+
+## JPA - Hibernate "Associations and Fetch type Eager and Lazy" (jakarta-ee9-hibernate-jpa-association-fetch-type)
+* feature/06_hibernate-jpa-association-fetch-type
+	- @OneToMany, @ManyToMany used by default FetchType.Lazy
+	- @ManyToOne, @OneToOne used by default FetchType.Eager
+	- 2 attributes in an Entity class with @OneToMany(fetch = FetchType.EAGER) will throw an Exception: cannot simultaneously fetch multiple bag [...]
+	  In a query we cannot use "SELECT ... LEFT JOIN FETCH c.addressEntities LEFT JOIN FETCH c.invoiceEntities ...;" because it will throw: cannot simultaneously fetch multiple bag [...invoiceEntities, ...addressEntities] because both are @OneToMany.
+	  @See for recommendations: FetchLazyOneToManyJoinFetchResultList.java and FetchLazyOneToManyJoinFetchSingleResult.java
+	- For @OneToMany and @ManyToMany the Fetch LEFT JOIN works in the same way.
