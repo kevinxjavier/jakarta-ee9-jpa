@@ -25,3 +25,6 @@
 	  In a query we cannot use "SELECT ... LEFT JOIN FETCH c.addressEntities LEFT JOIN FETCH c.invoiceEntities ...;" because it will throw: cannot simultaneously fetch multiple bag [...invoiceEntities, ...addressEntities] because both are @OneToMany.
 	  @See for recommendations: FetchLazyOneToManyJoinFetchResultList.java and FetchLazyOneToManyJoinFetchSingleResult.java
 	- For @OneToMany and @ManyToMany the Fetch LEFT JOIN works in the same way.
+
+## JPA - Hibernate "Associations and Fetch type Eager and Lazy with API Criteria" (jakarta-ee9-hibernate-jpa-association-fetch-type-hcriteria)
+* feature/07_hibernate-jpa-association-fetch-type-hcriteria
