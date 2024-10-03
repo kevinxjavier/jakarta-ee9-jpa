@@ -1,0 +1,18 @@
+<Context>
+
+	<!-- JDBC Documentation -->
+	<!-- https://tomcat.apache.org/tomcat-10.1-doc/jndi-datasource-examples-howto.html#MySQL_DBCP_2_Example -->
+	<Resource name="jdbc/MySQLDB" auth="Container"
+		type="javax.sql.DataSource" maxTotal="100" maxIdle="30"
+		maxWaitMillis="10000" username="root" password="123456"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/enterprise?serverTimezone=Europe/Madrid" />
+
+	<!-- CDI Documentation -->
+	<!-- https://stackoverflow.com/questions/18995951/how-to-install-and-use-cdi-on-tomcat 
+		https://balusc.omnifaces.org/2013/10/how-to-install-cdi-in-tomcat.html -->
+<!-- 	<Resource name="BeanManager" auth="Container" -->
+<!-- 		type="javax.enterprise.inject.spi.BeanManager" -->
+<!-- 		factory="org.jboss.weld.resources.ManagerObjectFactory" /> -->
+
+</Context>

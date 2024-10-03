@@ -28,3 +28,6 @@
 
 ## JPA - Hibernate "Associations and Fetch type Eager and Lazy with API Criteria" (jakarta-ee9-hibernate-jpa-association-fetch-type-hcriteria)
 * feature/07_hibernate-jpa-association-fetch-type-hcriteria
+
+## JPA - Hibernate "With Servlet CDI" (jakarta-ee9-hibernate-jpa-servlet-cdi)
+* feature/08_hibernate-jpa-servlet-cdi

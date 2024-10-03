@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	version="6.0">
+
+	<!-- Documentation -->
+	<!-- https://tomcat.apache.org/tomcat-10.1-doc/jndi-datasource-examples-howto.html#MySQL_DBCP_2_Example -->
+
+	<description>WebApp with CDI</description>
+
+	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/MySQLDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
+<!-- 	<resource-env-ref> -->
+<!-- 		<resource-env-ref-name>BeanManager</resource-env-ref-name> -->
+<!-- 		<resource-env-ref-type>javax.enterprise.inject.spi.BeanManager</resource-env-ref-type> -->
+<!-- 	</resource-env-ref> -->
+
+</web-app>

@@ -1,0 +1,19 @@
+<beans xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd"
+	version="3.0" bean-discovery-mode="annotated">
+	<!-- bean-discovery-mode="none" means not scan a CDI class, e.g.: @ScopeSession, @ApplicationScope, etc.
+		
+		bean-discovery-mode="annotated" means annotated class will be scans for CDI. "This is the behavior BY DEFAULT if we dont specified".
+		
+		bean-discovery-mode="all" means not only annotated classes will be CDI also classes without annotations will be CDI and Depandant by default.
+	 -->
+
+	<interceptors>
+		<class>com.kevinpina.interceptors.LoggingInterceptor</class>
+		<class>com.kevinpina.interceptors.TransactionalInterceptorJPA</class>
+		<class>com.kevinpina.interceptors.TransactionalInterceptorJDBC</class>
+	</interceptors>
+
+</beans>
+        
